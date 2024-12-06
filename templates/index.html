@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header>
+    <center>
+    <h1>Магазин красок</h1>
+    <nav>
+        <a href="/">Главная</a>
+        <a href="/catalog">Каталог</a>
+        {{if .}}
+            <a href="/profile">Профиль</a>
+            {{if .IsAdmin}}
+                <a href="/admin">Админ панель</a>
+            {{end}}
+            <a href="/cart">Корзина</a>
+            <a href="/logout">Выйти</a>
+        {{else}}
+            <a href="/login">Вход</a>
+            <a href="/register">Регистрация</a>
+        {{end}}
+    </nav>
+    </center>
+</header>
+<main>
+    <center>
+    <h2>Добро пожаловать в наш магазин красок!</h2>
+    <p>Здесь вы можете выбрать краски для любых поверхностей по выгодным ценам!</p>
+    </center>
+</main>
+</body>
+</html>

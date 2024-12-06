@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Вход</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+	<header> 
+		<center>
+
+  <h1>Вход</h1>
+  <nav>
+    <a href="/">Главная</a>
+    <a href="/register">Регистрация</a>
+  </nav>
+		</center>
+</header>
+<main>
+  <form action="/login" method="post">
+    <label for="email">Почта:</label>
+    <input type="email" name="email" id="email" required><br>
+    <label for="password">Пароль:</label>
+    <input type="password" name="password" id="password" required><br>
+    <button type="submit">Войти</button>
+  </form>
+</main>
+</body>
+</html>

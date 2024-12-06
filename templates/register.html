@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Регистрация</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header	> 
+	<center>
+  <h1>Регистрация</h1>
+  <nav>
+    <a href="/">Главная</a>
+    <a href="/login">Вход</a>
+  </nav> 
+  </center>
+	 
+</header>
+<main>
+  <form action="/register" method="post">
+    <label for="name">Имя:</label>
+    <input type="text" name="name" id="name" required maxlength="27"><br>
+    <label for="email">Почта:</label>
+    <input type="email" name="email" id="email" required><br>
+    <label for="phone">Номер телефона:</label>
+    <input type="tel" name="phone" id="phone" required pattern="\+?[0-9]{11,12}" title="Введите номер телефона в формате: +12345678900 или 12345678900"><br>
+    <label for="password">Пароль:</label>
+    <input type="password" name="password" id="password" required minlength="8"><br>
+    <label for="confirm_password">Подтвердите пароль:</label>
+    <input type="password" name="confirm_password" id="confirm_password" required><br>
+    <button type="submit">Зарегистрироваться</button>
+  </form>
+</main>
+</body>
+</html>

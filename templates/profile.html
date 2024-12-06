@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Профиль</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header>
+	<center> 
+    <h1>Профиль пользователя {{.User.Name}}</h1>
+    <nav>
+        <a href="/">Главная</a>
+        <a href="/catalog">Каталог</a>
+        <a href="/logout">Выйти</a>
+    </nav>
+	</center>
+</header>
+<main>
+    <h2>Ваши заказы:</h2>
+    <ul>
+        {{range .Orders}}
+            <li>
+                <strong>Заказ №{{.ID}}</strong><br>
+                Дата: {{.DateTime}}<br>
+                Статус: {{.Status}}<br>
+                Адрес доставки: {{if eq .Address "firsts_addres"}}Новосибирск, Гоголя 16а{{else if eq .Address "second_addres"}}Новосибирск, Ленина 56{{else if eq .Address "third_addres"}}Новосибирск, Троллейная 8{{else}}{{.Address}}{{end}}<br>
+                Метод оплаты: {{if eq .PaymentMethod "card_on_delivery"}}Картой при получении{{else if eq .PaymentMethod "cash_on_delivery"}}Наличными при получении{{else}}{{.PaymentMethod}}{{end}}<br>
+                Общая сумма: {{.Total}} руб.
+            </li>
+        {{else}}
+            <li>У вас нет заказов.</li>
+        {{end}}
+    </ul> 
+</main>
+</body>
+</html>

@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fae8e0; /* Cream */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #ef7c8e; /* Hot Pink */
+    color: white;
+    padding: 15px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav a {
+    color: white;
+    margin-right: 15px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #b6e2d3; /* Spearmint */
+}
+
+main {
+    padding: 20px;
+}
+
+h2 {
+    color: #ef7c8e; /* Hot Pink */
+}
+
+button, input[type="submit"] {
+    background-color: #b6e2d3; /* Spearmint */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #ef7c8e; /* Hot Pink */
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+}
+
+form input, form select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product {
+    background-color: #fff;
+    border: 1px solid #d8a7b1; /* Rosewater */
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px;
+    width: calc(25% - 40px);
+    box-sizing: border-box;
+    transition: transform 0.3s;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+}
+
+.product h3 {
+    margin-top: 0;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th, .table td {
+    border: 1px solid #d8a7b1; /* Rosewater */
+    padding: 10px;
+    text-align: left;
+}
+
+.order {
+    border: 1px solid #d8a7b1; /* Rosewater */
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.order h2 {
+    margin-top: 0;
+}

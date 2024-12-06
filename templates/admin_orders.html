@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Управление заказами</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header>
+    <center>
+    <h1>Заказы</h1>
+    <nav>
+        <a href="/">Главная</a>
+        <a href="/admin">Админ панель</a>
+        <a href="/logout">Выйти</a>
+    </nav>
+    </center>
+</header>
+<main>
+    {{range .Orders}}
+        <div class="order">
+            <h2>Заказ №{{.ID}} от пользователя {{.UserName}}</h2>
+            <p>Дата заказа: {{.DateTime}}</p>
+            <p>Статус: {{.Status}}</p>
+            <p>Адрес доставки:
+                {{if eq .Address "firsts_addres"}}Новосибирск, Гоголя 16а
+                {{else if eq .Address "second_addres"}}Новосибирск, Ленина 56
+                {{else if eq .Address "third_addres"}}Новосибирск, Троллейная 8
+                {{else}}{{.Address}}
+                {{end}}
+            </p>
+            <p>Метод оплаты:
+                {{if eq .PaymentMethod "card_on_delivery"}}Картой при получении
+                {{else if eq .PaymentMethod "cash_on_delivery"}}Наличными при получении
+                {{else}}{{.PaymentMethod}}
+                {{end}}
+            </p>
+            <ul>
+                {{range .Items}}
+                    <li>{{.Name}} ({{.Kind}} / {{.Type}}) - {{.Cost}} руб.</li>
+                {{end}}
+            </ul>
+            <p>Общая сумма: {{.Total}} руб.</p>
+            <form action="/admin/update_order_status" method="post">
+                <input type="hidden" name="order_id" value="{{.ID}}">
+                <label for="status">Изменить статус:</label>
+                <select name="status">
+                    <option value="На рассмотрении" {{if eq .Status "На рассмотрении"}}selected{{end}}>На рассмотрении</option>
+                    <option value="В пути" {{if eq .Status "В пути"}}selected{{end}}>В пути</option>
+                    <option value="Доставлено" {{if eq .Status "Доставлено"}}selected{{end}}>Доставлено</option>
+                </select>
+                <button type="submit">Обновить статус</button>
+            </form>
+        </div>
+    {{end}}
+</main>
+</body>
+</html>

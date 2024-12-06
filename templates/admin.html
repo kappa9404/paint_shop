@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Административная панель</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header>
+	<center>
+    <h1>Административная панель</h1>
+    <nav>
+        <a href="/">Главная</a>
+        <a href="/admin/orders">Заказы</a>
+        <a href="/logout">Выйти</a>
+    </nav>
+	</center>
+</header>
+<main>
+    <center>
+    <h2>Добро пожаловать, администратор {{.Name}}</h2>
+    <p>Выберите действие в меню.</p>
+    </center>
+</main>
+</body>
+</html>
